@@ -1,19 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | Gabriel Sagiani Máximo</title>
+    <title>Gabriel Sagiani Máximo - Product Owner</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #192a56;    /* Azul profundo */
-            --secondary-color: #00a8ff;  /* Azul neon */
-            --accent-color: #fbc531;     /* Amarelo */
-            --text-color: #2f3640;
-            --light-bg: #f1f2f6;
-            --white: #ffffff;
+            --primary-color: #112240;
+            --secondary-color: #64ffda;
+            --text-color: #ccd6f6;
+            --text-secondary: #8892b0;
+            --background-color: #0a192f;
+            --section-bg: #112240;
         }
 
         * {
@@ -23,433 +22,128 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: var(--light-bg);
+            background-color: var(--background-color);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 8px;
+            z-index: 100;
+        }
+
+        .skip-to-content:focus {
+            top: 0;
         }
 
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--white);
-            padding: 4rem 0;
-            text-align: center;
-            margin-bottom: 3rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            padding: 1rem 0;
         }
 
-        .header-content {
-            max-width: 800px;
+        .nav-container {
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--white);
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-decoration: none;
         }
 
-        .subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
         }
 
         .social-links a {
-            color: var(--white);
-            text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1.1rem;
-            transition: all 0.3s;
+            color: var(--text-color);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
         }
 
         .social-links a:hover {
-            color: var(--accent-color);
+            color: var(--secondary-color);
         }
 
-        section {
-            background: var(--white);
-            border-radius: 10px;
-            padding: 2rem;
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
             margin-bottom: 2rem;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        section:hover {
-            transform: translateY(-5px);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--secondary-color);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .skill-item {
-            background: var(--light-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            transition: all 0.3s;
-            border: 1px solid transparent;
-        }
-
-        .skill-item:hover {
-            background: var(--secondary-color);
-            color: var(--white);
-            border-color: var(--accent-color);
-        }
-
-        .skill-item i {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-
-        .skill-item:hover i {
-            color: var(--white);
-        }
-
-        .skill-item strong {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .skill-item:hover strong {
-            color: var(--white);
-        }
-
-        .skill-item ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .skill-item ul li {
-            margin-bottom: 0.3rem;
-            font-size: 0.9rem;
-        }
-
-        .project {
-            background: var(--light-bg);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-left: 4px solid var(--secondary-color);
-            transition: all 0.3s;
-        }
-
-        .project:hover {
-            border-left-color: var(--accent-color);
-            transform: translateX(5px);
-        }
-
-        .project h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .project-details {
-            display: grid;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .project-details h4 {
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .project-details ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .project-details ul li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .project-details ul li:before {
-            content: "•";
-            color: var(--accent-color);
-            position: absolute;
-            left: 0;
-        }
-
-        .certificates {
-            background: var(--light-bg);
-            border-radius: 8px;
-            padding: 1.5rem;
-        }
-
-        .certificates ul {
-            list-style: none;
-        }
-
-        .certificates li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--secondary-color);
-            transition: all 0.3s;
-        }
-
-        .certificates li:hover {
-            color: var(--secondary-color);
-            padding-left: 10px;
-        }
-
-        .certificates li:last-child {
-            border-bottom: none;
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
+            .nav-links {
+                display: none;
             }
 
-            header {
-                padding: 2rem 0;
+            .hero h1 {
+                font-size: 3rem;
             }
 
-            h1 {
+            .hero h2 {
                 font-size: 2rem;
-            }
-
-            section {
-                padding: 1.5rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="header-content">
-            <h1>Gabriel Sagiani Máximo</h1>
-            <p class="subtitle">Product Owner | Analista de Negócios | Analista de Requisitos</p>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/gabriel-sagiani-máximo-81ab0a10b" target="_blank">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <section>
-            <h2>Sobre Mim</h2>
-            <p>Product Owner com foco em transformação digital e inovação, especializado em desenvolvimento de soluções que atendam às necessidades específicas dos clientes. Minha abordagem combina análise técnica com empatia, permitindo uma compreensão profunda das dores e necessidades dos stakeholders. Experiência comprovada em gestão de produtos digitais, metodologias ágeis e liderança de equipes multidisciplinares.</p>
-        </section>
-
-        <section>
-            <h2>Habilidades</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <i class="fas fa-tasks"></i>
-                    <strong>Gestão de Produtos</strong>
-                    <ul>
-                        <li>Product Ownership</li>
-                        <li>Backlog Management</li>
-                        <li>Roadmap Planning</li>
-                        <li>MVP Definition</li>
-                    </ul>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-users"></i>
-                    <strong>Metodologias Ágeis</strong>
-                    <ul>
-                        <li>Scrum</li>
-                        <li>Kanban</li>
-                        <li>Sprint Planning</li>
-                        <li>Agile Metrics</li>
-                    </ul>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-pencil-ruler"></i>
-                    <strong>Design & Prototipagem</strong>
-                    <ul>
-                        <li>Figma</li>
-                        <li>Adobe XD</li>
-                        <li>Wireframing</li>
-                        <li>UX/UI Design</li>
-                    </ul>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-chart-line"></i>
-                    <strong>Análise & Gestão</strong>
-                    <ul>
-                        <li>Análise de Negócios</li>
-                        <li>Gestão de Requisitos</li>
-                        <li>CRM</li>
-                        <li>KPI Tracking</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Projetos</h2>
-            <div class="project">
-                <h3>Logtech Fintech – goFlux</h3>
-                <div class="project-details">
-                    <div class="project-context">
-                        <h4>Contexto</h4>
-                        <p>Desenvolvimento de uma plataforma inovadora para adiantamento de fretes e capital de giro no setor logístico.</p>
-                    </div>
-                    <div class="project-solution">
-                        <h4>Solução</h4>
-                        <ul>
-                            <li>Implementação de sistema de antecipação de fretes com garantias fiscais</li>
-                            <li>Desenvolvimento de parcerias estratégicas com instituições financeiras</li>
-                            <li>Criação de FIDC próprio para autonomia financeira</li>
-                        </ul>
-                    </div>
-                    <div class="project-impact">
-                        <h4>Impacto</h4>
-                        <ul>
-                            <li>Otimização do processo de adiantamento, reduzindo o tempo médio de processamento</li>
-                            <li>Expansão significativa da base de clientes</li>
-                            <li>Implementação bem-sucedida do FIDC próprio, garantindo maior autonomia financeira</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project">
-                <h3>Orçado x Realizado para Empresa do Segmento de Soja</h3>
-                <div class="project-details">
-                    <div class="project-context">
-                        <h4>Contexto</h4>
-                        <p>Cliente precisava calcular orçado x realizado dos fretes, lidando com variáveis complexas de preço e transporte.</p>
-                    </div>
-                    <div class="project-solution">
-                        <h4>Solução</h4>
-                        <ul>
-                            <li>Desenvolvimento de interface interativa com filtros avançados</li>
-                            <li>Implementação de sistema de cálculo automático</li>
-                            <li>Criação de dashboard personalizado</li>
-                        </ul>
-                    </div>
-                    <div class="project-impact">
-                        <h4>Impacto</h4>
-                        <ul>
-                            <li>Otimização do processo de análise de custos</li>
-                            <li>Melhoria significativa na precisão das projeções</li>
-                            <li>Facilitação do processo de tomada de decisão</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project">
-                <h3>Chatbot Inteligente para Atendimento na F360</h3>
-                <div class="project-details">
-                    <div class="project-context">
-                        <h4>Contexto</h4>
-                        <p>Alto volume de atendimentos sobrecarregava a equipe, necessitando de uma solução automatizada.</p>
-                    </div>
-                    <div class="project-solution">
-                        <h4>Solução</h4>
-                        <ul>
-                            <li>Implementação de chatbot com IA</li>
-                            <li>Desenvolvimento de árvore de processos</li>
-                            <li>Integração com sistema de atendimento</li>
-                        </ul>
-                    </div>
-                    <div class="project-impact">
-                        <h4>Impacto</h4>
-                        <ul>
-                            <li>Redução significativa na carga de trabalho manual</li>
-                            <li>Otimização do tempo de resposta aos clientes</li>
-                            <li>Melhoria na satisfação do cliente</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project">
-                <h3>Criação de CRMs Personalizados – Code 7</h3>
-                <div class="project-details">
-                    <div class="project-context">
-                        <h4>Contexto</h4>
-                        <p>Necessidade de um sistema eficiente para otimizar o atendimento ao cliente.</p>
-                    </div>
-                    <div class="project-solution">
-                        <h4>Solução</h4>
-                        <ul>
-                            <li>Desenvolvimento de CRMs personalizados</li>
-                            <li>Implementação de fluxos de trabalho automatizados</li>
-                            <li>Criação de relatórios personalizados</li>
-                        </ul>
-                    </div>
-                    <div class="project-impact">
-                        <h4>Impacto</h4>
-                        <ul>
-                            <li>Aumento significativo na produtividade da equipe</li>
-                            <li>Otimização do tempo de atendimento</li>
-                            <li>Melhoria na satisfação do cliente</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project">
-                <h3>Portal do Cliente – Expert System</h3>
-                <div class="project-details">
-                    <div class="project-context">
-                        <h4>Contexto</h4>
-                        <p>Dificuldade de comunicação entre empreiteiras e compradores sobre o andamento das obras.</p>
-                    </div>
-                    <div class="project-solution">
-                        <h4>Solução</h4>
-                        <ul>
-                            <li>Desenvolvimento de portal de acompanhamento em tempo real</li>
-                            <li>Implementação de sistema de notificações</li>
-                            <li>Criação de área de documentação</li>
-                        </ul>
-                    </div>
-                    <div class="project-impact">
-                        <h4>Impacto</h4>
-                        <ul>
-                            <li>Aumento significativo na transparência do processo</li>
-                            <li>Redução nas dúvidas sobre o andamento das obras</li>
-                            <li>Melhoria na comunicação entre empreiteiras e compradores</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Cursos e Certificações</h2>
-            <div class="certificates">
-                <ul>
-                    <li>Certificação Scrum Fundamentals – ScrumStudy</li>
-                    <li>Design Thinking – IBM</li>
-                    <li>Trilha de Formação em Gestão de Projetos – Escola Virtual</li>
-                    <li>UX e UI Design – TIMTEC</li>
-                    <li>Scrum Product Owner Training – Alison</li>
-                    <li>Digital Product Management – University of Virginia</li>
-                </ul>
-            </div>
-        </section>
-    </div>
-</body>
-</html>
