@@ -257,6 +257,99 @@
             color: var(--secondary-color);
         }
 
+        /* Estilos para os projetos */
+        .projects-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .project-card {
+            background: var(--section-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .project-card h3 {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-sections {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .project-section {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 6px;
+        }
+
+        .project-section h4 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .project-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-section li {
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .project-section li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+
+        /* Estilos para certificações */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .certificate-card {
+            background: var(--section-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .certificate-card i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .certificate-card p {
+            color: var(--text-color);
+            margin: 0;
+        }
+
         @media (max-width: 1200px) {
             .skills-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -265,6 +358,10 @@
             .hero h2 {
                 font-size: 1.5rem;
                 white-space: normal;
+            }
+
+            .project-sections {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -296,181 +393,3 @@
         }
     </style>
 </head>
-<body>
-    <a href="#main-content" class="skip-to-content">Pular para o conteúdo</a>
-
-    <header>
-        <nav class="nav-container">
-            <div class="nav-links">
-                <a href="#about">Sobre</a>
-                <a href="#skills">Habilidades</a>
-                <a href="#experience">Experiência</a>
-                <a href="#projects">Projetos</a>
-                <a href="#certificates">Certificações</a>
-            </div>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/gabriel-sagiani-máximo-81ab0a10b" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </div>
-        </nav>
-    </header>
-
-    <main id="main-content">
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Gabriel Sagiani Máximo</h1>
-                <h2>Product Owner | Analista de Negócios | Analista de Requisitos</h2>
-                <p>Construo experiências digitais acessíveis e eficientes, focando na transformação de ideias em produtos que atendam às necessidades específicas dos clientes.</p>
-            </div>
-        </section>
-
-        <section id="about" class="section">
-            <div class="section-container">
-                <h2 class="section-title">Sobre</h2>
-                <div class="about-content">
-                    <p>Sou um Product Owner apaixonado por transformação digital e inovação, especializado em desenvolvimento de soluções que atendam às necessidades específicas dos clientes. Minha abordagem combina análise técnica com empatia, permitindo uma compreensão profunda das dores e necessidades dos stakeholders.</p>
-                    <p>Atualmente, foco em gestão de produtos digitais, metodologias ágeis e liderança de equipes multidisciplinares, garantindo que cada projeto entregue valor real para os usuários finais.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="section">
-            <div class="section-container">
-                <h2 class="section-title">Habilidades</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <i class="fas fa-tasks"></i>
-                        <h3>Gestão de Produtos</h3>
-                        <ul>
-                            <li>Product Ownership</li>
-                            <li>Backlog Management</li>
-                            <li>Roadmap Planning</li>
-                            <li>MVP Definition</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fas fa-users"></i>
-                        <h3>Metodologias Ágeis</h3>
-                        <ul>
-                            <li>Scrum</li>
-                            <li>Kanban</li>
-                            <li>Sprint Planning</li>
-                            <li>Agile Metrics</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fas fa-pencil-ruler"></i>
-                        <h3>Design & Prototipagem</h3>
-                        <ul>
-                            <li>Figma</li>
-                            <li>Adobe XD</li>
-                            <li>Wireframing</li>
-                            <li>UX/UI Design</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Análise & Gestão</h3>
-                        <ul>
-                            <li>Análise de Negócios</li>
-                            <li>Gestão de Requisitos</li>
-                            <li>CRM</li>
-                            <li>KPI Tracking</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="section">
-            <div class="section-container">
-                <h2 class="section-title">Experiência</h2>
-                <div class="experience-grid">
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <h3>Product Owner</h3>
-                            <span class="experience-date">Junho/2024 - Janeiro/2025</span>
-                        </div>
-                        <h4>Agência Hayaku</h4>
-                        <ul>
-                            <li>Desenvolvimento de processos para entrada de novos projetos, agilizando o fluxo de trabalho da equipe</li>
-                            <li>Condução de pesquisas qualitativas e quantitativas para entender o comportamento dos usuários</li>
-                            <li>Colaboração com clientes e equipe de desenvolvimento para alinhar objetivos de negócios e experiência do usuário</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <h3>Analista de Negócios</h3>
-                            <span class="experience-date">Outubro/2023 - Junho/2024</span>
-                        </div>
-                        <h4>F360</h4>
-                        <ul>
-                            <li>Análise de solicitações de integrações e proposição de melhorias para eficiência operacional</li>
-                            <li>Contato constante com clientes para identificação de demandas</li>
-                            <li>Análise de integrações via relatórios e API para implementação de conciliação bancária</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <h3>Product Owner</h3>
-                            <span class="experience-date">Janeiro/2022 - Setembro/2023</span>
-                        </div>
-                        <h4>goFlux</h4>
-                        <ul>
-                            <li>Definição de requisitos e documentação de processos para clareza nas necessidades do negócio</li>
-                            <li>Implementação de cerimônias do Scrum com stakeholders</li>
-                            <li>Otimização do fluxo de trabalho e redução de falhas de comunicação</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <h3>Product Owner</h3>
-                            <span class="experience-date">Setembro/2021 - Janeiro/2022</span>
-                        </div>
-                        <h4>Code 7</h4>
-                        <ul>
-                            <li>Realização de análises técnicas detalhadas para alinhamento com necessidades do cliente</li>
-                            <li>Teste de funcionalidades e documentação de resultados</li>
-                            <li>Garantia de conformidade com requisitos do cliente</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="section">
-            <div class="section-container">
-                <h2 class="section-title">Projetos</h2>
-                <div class="projects-grid">
-                    <!-- Aqui vamos adicionar seus projetos quando você me fornecer as informações -->
-                </div>
-            </div>
-        </section>
-
-        <section id="certificates" class="section">
-            <div class="section-container">
-                <h2 class="section-title">Certificações</h2>
-                <div class="certificates-grid">
-                    <!-- Aqui vamos adicionar suas certificações quando você me fornecer as informações -->
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        // Adicionar efeito de scroll suave
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-</body>
-</html>
