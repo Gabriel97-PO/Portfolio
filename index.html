@@ -344,9 +344,8 @@
             <h1>Gabriel Sagiani Máximo</h1>
             <p class="subtitle">Product Owner | Analista de Negócios | Analista de Requisitos</p>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/gabriel-sagiani-máximo-81ab0a10b" class="linkedin-link" onclick="handleLinkedInClick(event)">
-                    <i class="fab fa-linkedin"></i>
-                    <span>LinkedIn</span>
+                <a href="https://linkedin.com/in/gabriel-sagiani-máximo-81ab0a10b" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
             </div>
         </div>
@@ -551,59 +550,5 @@
             </div>
         </section>
     </div>
-
-    <script>
-        function handleLinkedInClick(event) {
-            event.preventDefault();
-            
-            // Criar efeito de partículas
-            for(let i = 0; i < 10; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                document.body.appendChild(particle);
-                
-                // Posição inicial
-                const rect = event.currentTarget.getBoundingClientRect();
-                const x = rect.left + rect.width / 2;
-                const y = rect.top + rect.height / 2;
-                
-                particle.style.left = x + 'px';
-                particle.style.top = y + 'px';
-                
-                // Animação
-                const angle = (i / 10) * Math.PI * 2;
-                const velocity = 5;
-                const vx = Math.cos(angle) * velocity;
-                const vy = Math.sin(angle) * velocity;
-                
-                let posX = x;
-                let posY = y;
-                let opacity = 1;
-                
-                const animate = () => {
-                    posX += vx;
-                    posY += vy;
-                    opacity -= 0.02;
-                    
-                    particle.style.left = posX + 'px';
-                    particle.style.top = posY + 'px';
-                    particle.style.opacity = opacity;
-                    
-                    if(opacity > 0) {
-                        requestAnimationFrame(animate);
-                    } else {
-                        particle.remove();
-                    }
-                };
-                
-                animate();
-            }
-            
-            // Redirecionar após a animação
-            setTimeout(() => {
-                window.open(event.currentTarget.href, '_blank');
-            }, 500);
-        }
-    </script>
 </body>
 </html>
