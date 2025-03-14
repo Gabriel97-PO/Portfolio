@@ -58,15 +58,9 @@
             margin: 0 auto;
             padding: 0 2rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            text-decoration: none;
+            gap: 2rem;
         }
 
         .nav-links {
@@ -120,9 +114,9 @@
         }
 
         .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
             color: var(--text-secondary);
+            margin-bottom: 1.5rem;
         }
 
         .hero p {
@@ -158,15 +152,64 @@
             margin-bottom: 1.5rem;
         }
 
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: var(--section-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .skill-card i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h3 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-card li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
         .experience-grid {
             display: grid;
-            gap: 3rem;
+            gap: 2rem;
         }
 
         .experience-item {
-            position: relative;
-            padding-left: 2rem;
-            border-left: 2px solid var(--secondary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 2rem;
+            background: var(--section-bg);
+            border-radius: 8px;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .experience-header {
@@ -219,7 +262,7 @@
             }
 
             .hero h2 {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
 
             .section {
@@ -230,6 +273,10 @@
                 flex-direction: column;
                 gap: 0.5rem;
             }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -238,9 +285,9 @@
 
     <header>
         <nav class="nav-container">
-            <a href="#" class="logo">GSM</a>
             <div class="nav-links">
                 <a href="#about">Sobre</a>
+                <a href="#skills">Habilidades</a>
                 <a href="#experience">Experiência</a>
                 <a href="#projects">Projetos</a>
                 <a href="#certificates">Certificações</a>
@@ -257,7 +304,7 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>Gabriel Sagiani Máximo</h1>
-                <h2>Product Owner</h2>
+                <h2>Product Owner | Analista de Negócios | Analista de Requisitos</h2>
                 <p>Construo experiências digitais acessíveis e eficientes, focando na transformação de ideias em produtos que atendam às necessidades específicas dos clientes.</p>
             </div>
         </section>
@@ -268,6 +315,54 @@
                 <div class="about-content">
                     <p>Sou um Product Owner apaixonado por transformação digital e inovação, especializado em desenvolvimento de soluções que atendam às necessidades específicas dos clientes. Minha abordagem combina análise técnica com empatia, permitindo uma compreensão profunda das dores e necessidades dos stakeholders.</p>
                     <p>Atualmente, foco em gestão de produtos digitais, metodologias ágeis e liderança de equipes multidisciplinares, garantindo que cada projeto entregue valor real para os usuários finais.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="section-container">
+                <h2 class="section-title">Habilidades</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fas fa-tasks"></i>
+                        <h3>Gestão de Produtos</h3>
+                        <ul>
+                            <li>Product Ownership</li>
+                            <li>Backlog Management</li>
+                            <li>Roadmap Planning</li>
+                            <li>MVP Definition</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Metodologias Ágeis</h3>
+                        <ul>
+                            <li>Scrum</li>
+                            <li>Kanban</li>
+                            <li>Sprint Planning</li>
+                            <li>Agile Metrics</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-pencil-ruler"></i>
+                        <h3>Design & Prototipagem</h3>
+                        <ul>
+                            <li>Figma</li>
+                            <li>Adobe XD</li>
+                            <li>Wireframing</li>
+                            <li>UX/UI Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Análise & Gestão</h3>
+                        <ul>
+                            <li>Análise de Negócios</li>
+                            <li>Gestão de Requisitos</li>
+                            <li>CRM</li>
+                            <li>KPI Tracking</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -335,7 +430,7 @@
             <div class="section-container">
                 <h2 class="section-title">Projetos</h2>
                 <div class="projects-grid">
-                    <!-- Aqui vou adicionar seus projetos quando você me fornecer as informações -->
+                    <!-- Aqui vamos adicionar seus projetos quando você me fornecer as informações -->
                 </div>
             </div>
         </section>
@@ -344,7 +439,7 @@
             <div class="section-container">
                 <h2 class="section-title">Certificações</h2>
                 <div class="certificates-grid">
-                    <!-- Aqui vou adicionar suas certificações quando você me fornecer as informações -->
+                    <!-- Aqui vamos adicionar suas certificações quando você me fornecer as informações -->
                 </div>
             </div>
         </section>
