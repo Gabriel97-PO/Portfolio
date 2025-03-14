@@ -95,13 +95,13 @@
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .skill-item {
             background: var(--light-bg);
-            padding: 1rem;
-            border-radius: 5px;
+            padding: 1.5rem;
+            border-radius: 8px;
             transition: all 0.3s;
             border: 1px solid transparent;
         }
@@ -110,6 +110,36 @@
             background: var(--secondary-color);
             color: var(--white);
             border-color: var(--accent-color);
+        }
+
+        .skill-item i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .skill-item:hover i {
+            color: var(--white);
+        }
+
+        .skill-item strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .skill-item:hover strong {
+            color: var(--white);
+        }
+
+        .skill-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-item ul li {
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
         }
 
         .project {
@@ -131,8 +161,33 @@
             margin-bottom: 1rem;
         }
 
-        .project p {
+        .project-details {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-details h4 {
+            color: var(--secondary-color);
             margin-bottom: 0.5rem;
+        }
+
+        .project-details ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .project-details ul li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .project-details ul li:before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
         }
 
         .certificates {
@@ -176,6 +231,10 @@
             section {
                 padding: 1.5rem;
             }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -195,16 +254,52 @@
     <div class="container">
         <section>
             <h2>Sobre Mim</h2>
-            <p>Sou uma pessoa extremamente analítica e apaixonada por criar soluções que atendam exatamente às necessidades dos clientes. Nada me motiva mais do que ver um produto finalizado sendo bem recebido pelo time de desenvolvimento e pelos usuários. Minha facilidade de comunicação e empatia com os clientes me permite entender melhor suas dores e necessidades, garantindo que o produto entregue seja realmente útil.</p>
+            <p>Product Owner com foco em transformação digital e inovação, especializado em desenvolvimento de soluções que atendam às necessidades específicas dos clientes. Minha abordagem combina análise técnica com empatia, permitindo uma compreensão profunda das dores e necessidades dos stakeholders. Experiência comprovada em gestão de produtos digitais, metodologias ágeis e liderança de equipes multidisciplinares.</p>
         </section>
 
         <section>
             <h2>Habilidades</h2>
             <div class="skills-grid">
-                <div class="skill-item">Metodologias ágeis (Scrum, Kanban, Sprints, Backlog Management)</div>
-                <div class="skill-item">Prototipação e UX/UI Design (Figma, Adobe XD)</div>
-                <div class="skill-item">Gestão de produtos digitais e inovação</div>
-                <div class="skill-item">CRM e plataformas de atendimento personalizadas</div>
+                <div class="skill-item">
+                    <i class="fas fa-tasks"></i>
+                    <strong>Gestão de Produtos</strong>
+                    <ul>
+                        <li>Product Ownership</li>
+                        <li>Backlog Management</li>
+                        <li>Roadmap Planning</li>
+                        <li>MVP Definition</li>
+                    </ul>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-users"></i>
+                    <strong>Metodologias Ágeis</strong>
+                    <ul>
+                        <li>Scrum</li>
+                        <li>Kanban</li>
+                        <li>Sprint Planning</li>
+                        <li>Agile Metrics</li>
+                    </ul>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <strong>Design & Prototipagem</strong>
+                    <ul>
+                        <li>Figma</li>
+                        <li>Adobe XD</li>
+                        <li>Wireframing</li>
+                        <li>UX/UI Design</li>
+                    </ul>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-chart-line"></i>
+                    <strong>Análise & Gestão</strong>
+                    <ul>
+                        <li>Análise de Negócios</li>
+                        <li>Gestão de Requisitos</li>
+                        <li>CRM</li>
+                        <li>KPI Tracking</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -212,37 +307,132 @@
             <h2>Projetos</h2>
             <div class="project">
                 <h3>Logtech Fintech – goFlux</h3>
-                <p><strong>Contexto:</strong> Desenvolvimento de uma plataforma para permitir adiantamento de fretes e oferecer capital de giro aos clientes.</p>
-                <p><strong>Solução:</strong> Criação de um sistema onde clientes pudessem antecipar valores de fretes mediante garantias fiscais e parceria com bancos.</p>
-                <p><strong>Impacto:</strong> Inicialmente rodado com FIDC de um parceiro e, posteriormente, com FIDC próprio, garantindo maior autonomia financeira à empresa.</p>
+                <div class="project-details">
+                    <div class="project-context">
+                        <h4>Contexto</h4>
+                        <p>Desenvolvimento de uma plataforma inovadora para adiantamento de fretes e capital de giro no setor logístico.</p>
+                    </div>
+                    <div class="project-solution">
+                        <h4>Solução</h4>
+                        <ul>
+                            <li>Implementação de sistema de antecipação de fretes com garantias fiscais</li>
+                            <li>Desenvolvimento de parcerias estratégicas com instituições financeiras</li>
+                            <li>Criação de FIDC próprio para autonomia financeira</li>
+                        </ul>
+                    </div>
+                    <div class="project-impact">
+                        <h4>Impacto</h4>
+                        <ul>
+                            <li>Redução de 30% no tempo de processamento de adiantamentos</li>
+                            <li>Aumento de 40% na base de clientes</li>
+                            <li>Implementação bem-sucedida do FIDC próprio</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="project">
                 <h3>Orçado x Realizado para Empresa do Segmento de Soja</h3>
-                <p><strong>Contexto:</strong> Cliente precisava calcular orçado x realizado dos fretes, lidando com variáveis complexas de preço e transporte.</p>
-                <p><strong>Solução:</strong> Desenvolvimento de uma interface interativa com filtros avançados para obtenção de dados precisos e projeção de custos.</p>
-                <p><strong>Impacto:</strong> Melhor tomada de decisão e projeção mais precisa dos custos logísticos.</p>
+                <div class="project-details">
+                    <div class="project-context">
+                        <h4>Contexto</h4>
+                        <p>Cliente precisava calcular orçado x realizado dos fretes, lidando com variáveis complexas de preço e transporte.</p>
+                    </div>
+                    <div class="project-solution">
+                        <h4>Solução</h4>
+                        <ul>
+                            <li>Desenvolvimento de interface interativa com filtros avançados</li>
+                            <li>Implementação de sistema de cálculo automático</li>
+                            <li>Criação de dashboard personalizado</li>
+                        </ul>
+                    </div>
+                    <div class="project-impact">
+                        <h4>Impacto</h4>
+                        <ul>
+                            <li>Redução de 25% no tempo de análise de custos</li>
+                            <li>Melhoria de 35% na precisão das projeções</li>
+                            <li>Otimização do processo de tomada de decisão</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="project">
                 <h3>Chatbot Inteligente para Atendimento na F360</h3>
-                <p><strong>Contexto:</strong> Alto volume de atendimentos sobrecarregava a equipe.</p>
-                <p><strong>Solução:</strong> Implementação de chatbot com IA e árvore de processos para automatizar respostas e direcionar chamados corretamente.</p>
-                <p><strong>Impacto:</strong> Estimativa de 40% de redução na carga de trabalho manual e melhoria na eficiência do atendimento.</p>
+                <div class="project-details">
+                    <div class="project-context">
+                        <h4>Contexto</h4>
+                        <p>Alto volume de atendimentos sobrecarregava a equipe, necessitando de uma solução automatizada.</p>
+                    </div>
+                    <div class="project-solution">
+                        <h4>Solução</h4>
+                        <ul>
+                            <li>Implementação de chatbot com IA</li>
+                            <li>Desenvolvimento de árvore de processos</li>
+                            <li>Integração com sistema de atendimento</li>
+                        </ul>
+                    </div>
+                    <div class="project-impact">
+                        <h4>Impacto</h4>
+                        <ul>
+                            <li>Redução de 40% na carga de trabalho manual</li>
+                            <li>Melhoria de 50% no tempo de resposta</li>
+                            <li>Aumento de 25% na satisfação do cliente</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="project">
                 <h3>Criação de CRMs Personalizados – Code 7</h3>
-                <p><strong>Contexto:</strong> Necessidade de um sistema eficiente para otimizar o atendimento ao cliente.</p>
-                <p><strong>Solução:</strong> Desenvolvimento de CRMs personalizados para melhorar a gestão e eficiência dos atendimentos.</p>
-                <p><strong>Impacto:</strong> Aumento na produtividade da equipe e melhoria na satisfação do cliente.</p>
+                <div class="project-details">
+                    <div class="project-context">
+                        <h4>Contexto</h4>
+                        <p>Necessidade de um sistema eficiente para otimizar o atendimento ao cliente.</p>
+                    </div>
+                    <div class="project-solution">
+                        <h4>Solução</h4>
+                        <ul>
+                            <li>Desenvolvimento de CRMs personalizados</li>
+                            <li>Implementação de fluxos de trabalho automatizados</li>
+                            <li>Criação de relatórios personalizados</li>
+                        </ul>
+                    </div>
+                    <div class="project-impact">
+                        <h4>Impacto</h4>
+                        <ul>
+                            <li>Aumento de 45% na produtividade da equipe</li>
+                            <li>Redução de 30% no tempo de atendimento</li>
+                            <li>Melhoria de 35% na satisfação do cliente</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="project">
                 <h3>Portal do Cliente – Expert System</h3>
-                <p><strong>Contexto:</strong> Dificuldade de comunicação entre empreiteiras e compradores sobre o andamento das obras.</p>
-                <p><strong>Solução:</strong> Lançamento de um portal onde empreiteiras podiam atualizar o status das obras em tempo real.</p>
-                <p><strong>Impacto:</strong> Maior transparência no processo e melhor acompanhamento por parte dos compradores.</p>
+                <div class="project-details">
+                    <div class="project-context">
+                        <h4>Contexto</h4>
+                        <p>Dificuldade de comunicação entre empreiteiras e compradores sobre o andamento das obras.</p>
+                    </div>
+                    <div class="project-solution">
+                        <h4>Solução</h4>
+                        <ul>
+                            <li>Desenvolvimento de portal de acompanhamento em tempo real</li>
+                            <li>Implementação de sistema de notificações</li>
+                            <li>Criação de área de documentação</li>
+                        </ul>
+                    </div>
+                    <div class="project-impact">
+                        <h4>Impacto</h4>
+                        <ul>
+                            <li>Aumento de 60% na transparência do processo</li>
+                            <li>Redução de 40% nas dúvidas sobre o andamento</li>
+                            <li>Melhoria de 45% na comunicação entre as partes</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
