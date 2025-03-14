@@ -68,14 +68,33 @@
             transition: all 0.3s;
         }
 
-        .social-links a:hover {
-            color: var(--accent-color);
+        .particle {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: #0077b5;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1000;
+            animation: fadeOut 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: scale(1);
+            }
+            to {
+                opacity: 0;
+                transform: scale(0.5);
+            }
         }
 
         .linkedin-link {
             position: relative;
             overflow: hidden;
             display: inline-block;
+            cursor: pointer;
         }
 
         .linkedin-link::before {
@@ -267,63 +286,6 @@
             border-bottom: none;
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .modal.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .modal-content {
-            position: relative;
-            width: 90%;
-            height: 90%;
-            margin: auto;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 30px;
-            height: 30px;
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1001;
-            transition: all 0.3s ease;
-        }
-
-        .modal-close:hover {
-            background: var(--accent-color);
-            transform: rotate(90deg);
-        }
-
-        .modal iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -348,22 +310,12 @@
     </style>
 </head>
 <body>
-    <!-- Modal do LinkedIn -->
-    <div class="modal" id="linkedinModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">
-                <i class="fas fa-times"></i>
-            </button>
-            <iframe id="linkedinFrame" src="" frameborder="0"></iframe>
-        </div>
-    </div>
-
     <header>
         <div class="header-content">
             <h1>Gabriel Sagiani Máximo</h1>
             <p class="subtitle">Product Owner | Analista de Negócios | Analista de Requisitos</p>
             <div class="social-links">
-                <a href="#" onclick="openLinkedInModal(event)" class="linkedin-link">
+                <a href="https://linkedin.com/in/gabriel-sagiani-máximo-81ab0a10b" target="_blank" class="linkedin-link" onclick="handleLinkedInClick(event)">
                     <i class="fab fa-linkedin"></i>
                     <span>LinkedIn</span>
                 </a>
@@ -572,51 +524,57 @@
     </div>
 
     <script>
-        function openLinkedInModal(event) {
+        function handleLinkedInClick(event) {
             event.preventDefault();
-            const modal = document.getElementById('linkedinModal');
-            const iframe = document.getElementById('linkedinFrame');
             
-            // URL do seu perfil do LinkedIn
-            const linkedinUrl = 'https://linkedin.com/in/gabriel-sagiani-máximo-81ab0a10b';
-            
-            // Configurar o iframe
-            iframe.src = linkedinUrl;
-            
-            // Mostrar o modal
-            modal.classList.add('active');
-            
-            // Prevenir scroll do body
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('linkedinModal');
-            const iframe = document.getElementById('linkedinFrame');
-            
-            // Remover o conteúdo do iframe
-            iframe.src = '';
-            
-            // Esconder o modal
-            modal.classList.remove('active');
-            
-            // Restaurar scroll do body
-            document.body.style.overflow = 'auto';
-        }
-
-        // Fechar modal ao clicar fora do conteúdo
-        document.getElementById('linkedinModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closeModal();
+            // Criar efeito de partículas
+            for(let i = 0; i < 10; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                document.body.appendChild(particle);
+                
+                // Posição inicial
+                const rect = event.target.getBoundingClientRect();
+                const x = rect.left + rect.width / 2;
+                const y = rect.top + rect.height / 2;
+                
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                
+                // Animação
+                const angle = (i / 10) * Math.PI * 2;
+                const velocity = 5;
+                const vx = Math.cos(angle) * velocity;
+                const vy = Math.sin(angle) * velocity;
+                
+                let posX = x;
+                let posY = y;
+                let opacity = 1;
+                
+                const animate = () => {
+                    posX += vx;
+                    posY += vy;
+                    opacity -= 0.02;
+                    
+                    particle.style.left = posX + 'px';
+                    particle.style.top = posY + 'px';
+                    particle.style.opacity = opacity;
+                    
+                    if(opacity > 0) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        particle.remove();
+                    }
+                };
+                
+                animate();
             }
-        });
-
-        // Fechar modal com a tecla ESC
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
+            
+            // Redirecionar após a animação
+            setTimeout(() => {
+                window.open(event.target.href, '_blank');
+            }, 500);
+        }
     </script>
 </body>
 </html>
