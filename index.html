@@ -147,3 +147,179 @@
         }
     </style>
 </head>
+<body>
+    <a href="#main-content" class="skip-to-content">Pular para o conteúdo</a>
+
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="logo">GSM</a>
+            <div class="nav-links">
+                <a href="#about">Sobre</a>
+                <a href="#experience">Experiência</a>
+                <a href="#projects">Projetos</a>
+                <a href="#certificates">Certificações</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/gabriel-sagiani-máximo-81ab0a10b" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Gabriel Sagiani Máximo</h1>
+                <h2>Product Owner</h2>
+                <p>Construo experiências digitais acessíveis e eficientes, focando na transformação de ideias em produtos que atendam às necessidades específicas dos clientes.</p>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="section-container">
+                <h2 class="section-title">Sobre</h2>
+                <div class="about-content">
+                    <p>Sou um Product Owner apaixonado por transformação digital e inovação, especializado em desenvolvimento de soluções que atendam às necessidades específicas dos clientes. Minha abordagem combina análise técnica com empatia, permitindo uma compreensão profunda das dores e necessidades dos stakeholders.</p>
+                    <p>Atualmente, foco em gestão de produtos digitais, metodologias ágeis e liderança de equipes multidisciplinares, garantindo que cada projeto entregue valor real para os usuários finais.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="section-container">
+                <h2 class="section-title">Experiência</h2>
+                <div class="experience-grid">
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Product Owner</h3>
+                            <span class="experience-date">2023 — Presente</span>
+                        </div>
+                        <h4>goFlux</h4>
+                        <ul>
+                            <li>Liderança no desenvolvimento de plataforma inovadora para adiantamento de fretes</li>
+                            <li>Implementação de sistema de antecipação com garantias fiscais</li>
+                            <li>Desenvolvimento de parcerias estratégicas com instituições financeiras</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Analista de Negócios</h3>
+                            <span class="experience-date">2021 — 2023</span>
+                        </div>
+                        <h4>F360</h4>
+                        <ul>
+                            <li>Desenvolvimento de chatbot inteligente para atendimento</li>
+                            <li>Implementação de árvore de processos automatizada</li>
+                            <li>Integração com sistema de atendimento</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Analista de Requisitos</h3>
+                            <span class="experience-date">2019 — 2021</span>
+                        </div>
+                        <h4>Code 7</h4>
+                        <ul>
+                            <li>Criação de CRMs personalizados</li>
+                            <li>Implementação de fluxos de trabalho automatizados</li>
+                            <li>Desenvolvimento de relatórios personalizados</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <style>
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 3rem;
+        }
+
+        .about-content {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .experience-item {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--secondary-color);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item h3 {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        .experience-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .experience-item h4 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            color: var(--text-secondary);
+        }
+
+        .experience-item li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .experience-item li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</body>
