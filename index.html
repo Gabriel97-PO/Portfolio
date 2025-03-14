@@ -1,18 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Sagiani Máximo - Product Owner</title>
+    <title>Portfólio | Gabriel Sagiani Máximo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #2D3436;
-            --secondary-color: #0984E3;
-            --accent-color: #00B894;
-            --text-color: #2D3436;
-            --background-color: #FFFFFF;
-            --section-bg: #F5F6FA;
+            --primary-color: #192a56;    /* Azul profundo */
+            --secondary-color: #00a8ff;  /* Azul neon */
+            --accent-color: #fbc531;     /* Amarelo */
+            --text-color: #2f3640;
+            --light-bg: #f1f2f6;
+            --white: #ffffff;
         }
 
         * {
@@ -25,104 +26,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: var(--background-color);
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
-            background-size: cover;
-            opacity: 0.1;
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .social-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .linkedin-link {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(5px);
-        }
-
-        .linkedin-link:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
-        }
-
-        .linkedin-link::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s ease, height 0.6s ease;
-        }
-
-        .linkedin-link:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .linkedin-link i {
-            font-size: 1.3rem;
-            transition: transform 0.3s ease;
-        }
-
-        .linkedin-link:hover i {
-            transform: scale(1.2);
+            background-color: var(--light-bg);
         }
 
         .container {
@@ -131,13 +35,51 @@
             padding: 2rem;
         }
 
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .social-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
         section {
-            background: var(--section-bg);
-            border-radius: 15px;
+            background: var(--white);
+            border-radius: 10px;
             padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
         }
 
         section:hover {
@@ -147,44 +89,38 @@
         h2 {
             color: var(--primary-color);
             margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            position: relative;
             padding-bottom: 0.5rem;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--secondary-color);
-            border-radius: 3px;
+            border-bottom: 2px solid var(--secondary-color);
         }
 
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .skill-item {
-            background: white;
+            background: var(--light-bg);
             padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
+            border-radius: 8px;
+            transition: all 0.3s;
+            border: 1px solid transparent;
         }
 
         .skill-item:hover {
-            transform: translateY(-5px);
+            background: var(--secondary-color);
+            color: var(--white);
+            border-color: var(--accent-color);
         }
 
         .skill-item i {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: var(--secondary-color);
             margin-bottom: 1rem;
+        }
+
+        .skill-item:hover i {
+            color: var(--white);
         }
 
         .skill-item strong {
@@ -193,146 +129,111 @@
             color: var(--primary-color);
         }
 
+        .skill-item:hover strong {
+            color: var(--white);
+        }
+
         .skill-item ul {
             list-style: none;
             padding-left: 0;
         }
 
-        .skill-item li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .skill-item li::before {
-            content: '•';
-            color: var(--accent-color);
-            position: absolute;
-            left: 0;
+        .skill-item ul li {
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
         }
 
         .project {
-            background: white;
+            background: var(--light-bg);
+            border-radius: 8px;
             padding: 1.5rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--secondary-color);
+            transition: all 0.3s;
+        }
+
+        .project:hover {
+            border-left-color: var(--accent-color);
+            transform: translateX(5px);
         }
 
         .project h3 {
             color: var(--primary-color);
             margin-bottom: 1rem;
-            font-size: 1.4rem;
         }
 
         .project-details {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
+            margin-top: 1rem;
         }
 
-        .project-context,
-        .project-solution,
-        .project-impact {
-            padding: 1rem;
-            background: var(--section-bg);
-            border-radius: 8px;
-        }
-
-        .project-context h4,
-        .project-solution h4,
-        .project-impact h4 {
+        .project-details h4 {
             color: var(--secondary-color);
             margin-bottom: 0.5rem;
         }
 
-        .project ul {
+        .project-details ul {
             list-style: none;
             padding-left: 0;
         }
 
-        .project li {
+        .project-details ul li {
             margin-bottom: 0.5rem;
             padding-left: 1.5rem;
             position: relative;
         }
 
-        .project li::before {
-            content: '→';
+        .project-details ul li:before {
+            content: "•";
             color: var(--accent-color);
             position: absolute;
             left: 0;
         }
 
         .certificates {
-            background: white;
+            background: var(--light-bg);
+            border-radius: 8px;
             padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .certificates ul {
             list-style: none;
-            padding-left: 0;
         }
 
         .certificates li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
-            position: relative;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--secondary-color);
+            transition: all 0.3s;
         }
 
-        .certificates li::before {
-            content: '✓';
-            color: var(--accent-color);
-            position: absolute;
-            left: 0;
+        .certificates li:hover {
+            color: var(--secondary-color);
+            padding-left: 10px;
         }
 
-        .particle {
-            position: fixed;
-            width: 8px;
-            height: 8px;
-            background: var(--secondary-color);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 1000;
-            animation: fadeOut 1s ease-out forwards;
-        }
-
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-                transform: scale(1);
-            }
-            to {
-                opacity: 0;
-                transform: scale(0);
-            }
+        .certificates li:last-child {
+            border-bottom: none;
         }
 
         @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
             header {
-                padding: 3rem 1rem;
+                padding: 2rem 0;
             }
 
             h1 {
-                font-size: 2.5rem;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-            }
-
-            .container {
-                padding: 1rem;
+                font-size: 2rem;
             }
 
             section {
                 padding: 1.5rem;
             }
 
-            .project-details {
+            .skills-grid {
                 grid-template-columns: 1fr;
             }
         }
