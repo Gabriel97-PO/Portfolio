@@ -104,7 +104,9 @@
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 1000px;
+            text-align: center;
+            margin: 0 auto;
         }
 
         .hero h1 {
@@ -114,16 +116,17 @@
         }
 
         .hero h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
+            white-space: nowrap;
         }
 
         .hero p {
             font-size: 1.2rem;
             color: var(--text-secondary);
-            max-width: 600px;
-            margin-bottom: 2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
         }
 
         .section {
@@ -154,7 +157,7 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -164,6 +167,7 @@
             padding: 2rem;
             border-radius: 8px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
         }
 
         .skill-card:hover {
@@ -181,6 +185,7 @@
             color: var(--text-color);
             margin-bottom: 1rem;
             font-size: 1.2rem;
+            white-space: nowrap;
         }
 
         .skill-card ul {
@@ -252,6 +257,17 @@
             color: var(--secondary-color);
         }
 
+        @media (max-width: 1200px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+                white-space: normal;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -262,7 +278,7 @@
             }
 
             .hero h2 {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
             }
 
             .section {
