@@ -7,20 +7,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            /* Cores para o modo escuro (corpo) */
-            --dark-primary: #112240;
-            --dark-secondary: #64ffda;
-            --dark-text: #ccd6f6;
-            --dark-text-secondary: #8892b0;
-            --dark-background: #0a192f;
-            --dark-section-bg: #112240;
-
-            /* Cores para o modo claro (cabeçalho) */
-            --light-primary: #ffffff;
-            --light-secondary: #2d3436;
-            --light-text: #2d3436;
-            --light-text-secondary: #636e72;
-            --light-background: #ffffff;
+            --primary-color: #112240;
+            --secondary-color: #64ffda;
+            --text-color: #ccd6f6;
+            --text-secondary: #8892b0;
+            --background-color: #0a192f;
+            --section-bg: #112240;
         }
 
         * {
@@ -29,30 +21,19 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: var(--dark-text);
-            background: linear-gradient(
-                to bottom,
-                var(--light-background) 0%,
-                var(--light-background) 100vh,
-                var(--dark-background) 100vh,
-                var(--dark-background) 100%
-            );
-            background-attachment: fixed;
+            color: var(--text-color);
+            background-color: var(--background-color);
         }
 
         .skip-to-content {
             position: absolute;
             top: -40px;
             left: 0;
-            background: var(--dark-secondary);
-            color: var(--dark-primary);
+            background: var(--secondary-color);
+            color: var(--primary-color);
             padding: 8px;
             z-index: 100;
         }
@@ -66,11 +47,10 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(10, 25, 47, 0.85);
             backdrop-filter: blur(10px);
             z-index: 100;
             padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .nav-container {
@@ -89,14 +69,14 @@
         }
 
         .nav-links a {
-            color: var(--light-text);
+            color: var(--text-color);
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--dark-secondary);
+            color: var(--secondary-color);
         }
 
         .social-links {
@@ -105,13 +85,13 @@
         }
 
         .social-links a {
-            color: var(--light-text);
+            color: var(--text-color);
             font-size: 1.2rem;
             transition: color 0.3s ease;
         }
 
         .social-links a:hover {
-            color: var(--dark-secondary);
+            color: var(--secondary-color);
         }
 
         .hero {
@@ -121,19 +101,6 @@
             padding: 0 2rem;
             max-width: 1400px;
             margin: 0 auto;
-            background: var(--light-background);
-            position: relative;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 150px;
-            background: linear-gradient(to bottom, var(--light-background), var(--dark-background));
-            pointer-events: none;
         }
 
         .hero-content {
@@ -145,19 +112,19 @@
         .hero h1 {
             font-size: 4rem;
             margin-bottom: 1rem;
-            color: var(--light-text);
+            color: var(--secondary-color);
         }
 
         .hero h2 {
             font-size: 1.8rem;
-            color: var(--light-text-secondary);
+            color: var(--text-secondary);
             margin-bottom: 1.5rem;
             white-space: nowrap;
         }
 
         .hero p {
             font-size: 1.2rem;
-            color: var(--light-text-secondary);
+            color: var(--text-secondary);
             max-width: 800px;
             margin: 0 auto 2rem auto;
         }
@@ -166,7 +133,6 @@
             padding: 6rem 2rem;
             max-width: 1400px;
             margin: 0 auto;
-            background: var(--dark-background);
         }
 
         .section-container {
@@ -176,13 +142,13 @@
 
         .section-title {
             font-size: 2rem;
-            color: var(--dark-secondary);
+            color: var(--secondary-color);
             margin-bottom: 3rem;
         }
 
         .about-content {
             font-size: 1.1rem;
-            color: var(--dark-text-secondary);
+            color: var(--text-secondary);
         }
 
         .about-content p {
@@ -197,7 +163,7 @@
         }
 
         .skill-card {
-            background: var(--dark-section-bg);
+            background: var(--section-bg);
             padding: 2rem;
             border-radius: 8px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -211,12 +177,12 @@
 
         .skill-card i {
             font-size: 2rem;
-            color: var(--dark-secondary);
+            color: var(--secondary-color);
             margin-bottom: 1rem;
         }
 
         .skill-card h3 {
-            color: var(--dark-text);
+            color: var(--text-color);
             margin-bottom: 1rem;
             font-size: 1.2rem;
             white-space: nowrap;
@@ -228,7 +194,7 @@
         }
 
         .skill-card li {
-            color: var(--dark-text-secondary);
+            color: var(--text-secondary);
             margin-bottom: 0.5rem;
             font-size: 0.9rem;
         }
@@ -241,9 +207,9 @@
         .experience-item {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             padding: 2rem;
-            background: var(--dark-section-bg);
+            background: var(--section-bg);
             border-radius: 8px;
-            border-left: 3px solid var(--dark-secondary);
+            border-left: 3px solid var(--secondary-color);
         }
 
         .experience-item:hover {
@@ -259,23 +225,23 @@
         }
 
         .experience-item h3 {
-            color: var(--dark-secondary);
+            color: var(--secondary-color);
             font-size: 1.2rem;
         }
 
         .experience-date {
-            color: var(--dark-text-secondary);
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
 
         .experience-item h4 {
-            color: var(--dark-text);
+            color: var(--text-color);
             margin-bottom: 1rem;
         }
 
         .experience-item ul {
             list-style: none;
-            color: var(--dark-text-secondary);
+            color: var(--text-secondary);
         }
 
         .experience-item li {
@@ -288,7 +254,7 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--dark-secondary);
+            color: var(--secondary-color);
         }
 
         /* Estilos para os projetos */
@@ -298,7 +264,7 @@
         }
 
         .project-card {
-            background: var(--dark-section-bg);
+            background: var(--section-bg);
             border-radius: 8px;
             padding: 2rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -310,7 +276,7 @@
         }
 
         .project-card h3 {
-            color: var(--dark-secondary);
+            color: var(--secondary-color);
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
         }
@@ -328,7 +294,7 @@
         }
 
         .project-section h4 {
-            color: var(--dark-text);
+            color: var(--text-color);
             margin-bottom: 1rem;
             font-size: 1.1rem;
         }
@@ -339,7 +305,7 @@
         }
 
         .project-section li {
-            color: var(--dark-text-secondary);
+            color: var(--text-secondary);
             margin-bottom: 0.8rem;
             padding-left: 1.5rem;
             position: relative;
@@ -349,7 +315,7 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--dark-secondary);
+            color: var(--secondary-color);
         }
 
         /* Estilos para certificações */
@@ -360,7 +326,7 @@
         }
 
         .certificate-card {
-            background: var(--dark-section-bg);
+            background: var(--section-bg);
             padding: 1.5rem;
             border-radius: 8px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -376,11 +342,11 @@
 
         .certificate-card i {
             font-size: 1.5rem;
-            color: var(--dark-secondary);
+            color: var(--secondary-color);
         }
 
         .certificate-card p {
-            color: var(--dark-text);
+            color: var(--text-color);
             margin: 0;
         }
 
@@ -727,5 +693,32 @@
                         <p>Trilha de Formação em Gestão de Projetos – Escola Virtual</p>
                     </div>
                     <div class="certificate-card">
-                        <i class="fas fa-penc
-    
+                        <i class="fas fa-pencil-ruler"></i>
+                        <p>UX e UI Design – TIMTEC</p>
+                    </div>
+                    <div class="certificate-card">
+                        <i class="fas fa-user-tie"></i>
+                        <p>Scrum Product Owner Training – Alison</p>
+                    </div>
+                    <div class="certificate-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <p>Digital Product Management – University of Virginia</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Adicionar efeito de scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
